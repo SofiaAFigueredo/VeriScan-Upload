@@ -1,13 +1,12 @@
-// Pacotes Node
-const express = require("express"); // Link da API com servidor.
-const morgan = require("morgan");   // Middleware de logging de requisições HTTP (respostas no console).
+const express = require("express"); 
+const morgan = require("morgan");   
 
-const app = express();  // Declaração de variavel 
+const app = express();  
 
-app.use(express.json());    // Ler código json.
-app.use(express.urlencoded({ extended: true }));    // Transforma os dados codificados na URL em um objeto JavaScript.
-app.use(morgan('dev'))  // Registra no console, de forma concisa e colorida, cada requisição HTTP recebida.
+app.use(express.json());    
+app.use(express.urlencoded({ extended: true }));    
+app.use(morgan('dev'));
 
-app.use(require('./routes'));   // Linka o arquivo routes
+app.use(require('./routes'));
 
-app.listen(3000);   // Porta para localhost
+app.listen(3000);
